@@ -32,7 +32,10 @@ public class JpaMin
 System.out.println("Create");
 	tx.begin();
 	ExistingEntity ee = new ExistingEntity();
+	NewEntity ne = new NewEntity();
+	ee.addNewEntities(ne);
 	em.persist(ee);
+	em.persist(ne);
 	tx.commit();
 	
 //	em.clear();
